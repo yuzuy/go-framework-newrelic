@@ -12,7 +12,7 @@ func main() {
 	r := gin.New()
 	app, err := newrelic.NewApplication()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	r.Use(nrgin.Middleware(app))
 	if err := r.Run(); err != nil {

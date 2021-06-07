@@ -10,7 +10,7 @@ func main() {
 	e := echo.New()
 	app, err := newrelic.NewApplication()
 	if err != nil {
-		e.Logger.Fatal(err)
+		e.Logger.Warn(err)
 	}
 	e.Use(nrecho.Middleware(app))
 	e.Logger.Fatal(e.Start(":8080"))
